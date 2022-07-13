@@ -1,20 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+
+
+const styles = StyleSheet.create({
+  center:{
+    alignItems:'center'
+  }
+});
+
+const Greeting = (props) => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.center}>
+      <Text>Hello {props.name}!</Text>
+    </View>
+  )
+}
+
+const LotsOfGreeting = () => {
+  return (
+    <View style={[styles.center, {top:50}]}>
+      <Greeting name ='Ariff'/>
+      <Greeting name ='Syamsul'/>
+      <Greeting name ='Mat Kilau'/>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default LotsOfGreeting;
